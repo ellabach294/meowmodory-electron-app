@@ -1,0 +1,47 @@
+
+:root {
+  --dark-green: #416120;
+  --light-green: #a0c37f;
+  --creamy-yellow: #f5e6c8;
+  --off-white: #f9fafe;
+  --dark-brown: #4d372a;
+  --silver-pink: #c7aaaf;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Cherry Bomb One';
+  src: url('./fonts/CherryBombOne-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pacifico';
+  src: url('./fonts/Pacifico-Regular.woff2') format('woff2');
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: 'Cherry Bomb One';
+  background-color: var(--light-green);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}

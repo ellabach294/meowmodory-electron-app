@@ -1,0 +1,243 @@
+@import './base.css';
+
+.menu {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    -webkit-app-region: drag;
+}
+
+.menu .site-logo {
+    width: 90%;
+}
+
+.menu .site-logo img {
+    width: 70%;
+}
+
+.menu-control {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menu-control button {
+    padding: 0;
+    max-width: 25%;
+    -webkit-app-region: no-drag;
+}
+
+.menu-control button img {
+    max-width: 55%;
+}
+
+.timer-body {
+    height: auto;
+    margin: 0.5rem 2rem;
+    border: 5px solid var(--creamy-yellow);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer-control {
+    display: flex;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.timer-control button {
+    background-color: var(--off-white);
+    border: 2px solid var(--dark-green);
+    box-shadow:
+        0 0 3px var(--dark-green),
+        0 0 3px var(--dark-green) inset;
+    border-radius: 10px;
+    color: var(--dark-brown);
+    font-family: 'Pacifico';
+    font-size: 1rem;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.timer-control button:hover {
+    background-color: var(--dark-green);
+    color: var(--off-white);
+}
+
+.body {
+    position: relative;
+}
+
+.illustration {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    position: relative;
+}
+
+.illustration img {
+    max-width: 70%;
+    animation: none;
+    pointer-events: none;
+}
+
+.sparkling-1 {
+    position: absolute;
+    top: 5%;
+    left: 16%;
+    width: 10%;
+    height: auto;
+    animation: none;
+    pointer-events: none;
+}
+
+.sparkling-2 {
+    position: absolute;
+    top: 30%;
+    left: 16%;
+    width: 4%;
+    animation: none;
+    pointer-events: none;
+}
+
+.sparkling-3 {
+    position: absolute;
+    top: 16%;
+    right: 18%;
+    width: 6%;
+    height: auto;
+    animation: none;
+    pointer-events: none;
+}
+
+.sparkling-4 {
+    position: absolute;
+    top: 5%;
+    right: 40%;
+    width: 4%;
+    animation: none;
+    pointer-events: none;
+}
+
+.sparkling-5 {
+    position: absolute;
+    top: 36%;
+    right: 12%;
+    width: 4%;
+    animation: none;
+    pointer-events: none;
+}
+
+.pomodoro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -2.5rem;
+}
+
+.pomodoro p {
+    font-size: 5rem;
+    letter-spacing: 15px;
+    color: var(--dark-green);
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+}
+
+.btns button {
+    background-color: var(--off-white);
+    border: 3px solid var(--dark-green);
+    border-radius: 10px;
+    box-shadow:
+        0 0 3px var(--dark-green),
+        0 0 3px var(--dark-green) inset;
+    font-family: 'Pacifico';
+    font-size: 1.25rem;
+    padding: 0.1rem 1.25rem;
+    text-transform: uppercase;
+}
+
+.btns button:first-child {
+    color: var(--dark-brown);
+}
+
+.btns button:first-child:hover {
+    background-color: var(--dark-green);
+    color: var(--off-white);
+    transition: all 0.3s ease-in-out;
+}
+
+.btns button:last-child {
+    color: var(--silver-pink);
+}
+
+.btns button:last-child:hover {
+    background-color: var(--silver-pink);
+    border: 3px solid var(--silver-pink);
+    box-shadow:
+        0 0 3px var(--silver-pink),
+        0 0 3px var(--silver-pink) inset;
+    color: var(--off-white);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Sparkling Animation */
+@keyframes sparkle {
+    0% {
+        opacity: 0.2;
+        transform: scale(1) rotate(0deg);
+        filter: brightness(1);
+    }
+
+    25% {
+        opacity: 1;
+        transform: scale(1.1) rotate(10deg);
+        filter: brightness(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1) rotate(0deg);
+        filter: brightness(1);
+    }
+
+    75% {
+        opacity: 1;
+        transform: scale(1.1) rotate(-10deg);
+        filter: brightness(0.9);
+    }
+
+    100% {
+        opacity: 0.2;
+        transform: scale(1) rotate(0deg);
+        filter: brightness(1);
+    }
+}
+
+@keyframes sparkle-glow-fade {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+        filter: brightness(1) hue-rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+        filter: brightness(2) hue-rotate(30deg);
+    }
+
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+        filter: brightness(1) hue-rotate(0deg);
+    }
+}
