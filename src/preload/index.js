@@ -1,5 +1,6 @@
-import { contextBridge, ipcRenderer } from 'electron'
+import { app, contextBridge, ipcRenderer } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
+import path from "path"
 
 // Custom APIs for renderer
 const api = {}
@@ -14,7 +15,7 @@ if (process.contextIsolated) {
         versions: process.versions,
       },
       minimize: () => ipcRenderer.invoke('minimize-window'),
-      close: () => ipcRenderer.invoke('close-window')
+      close: () => ipcRenderer.invoke('close-window'),
     })
     contextBridge.exposeInMainWorld('api', api)
   } catch (error) {

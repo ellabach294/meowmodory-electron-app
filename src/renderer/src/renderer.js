@@ -36,6 +36,10 @@ document.getElementById('close-btn').addEventListener('click', () => {
 /**
  * Pomodoro Function
  */
+import alarmSoundPath from '../assets/audio/clock-timer.mp3'
+
+const alarm = new Audio(alarmSoundPath)
+
 let pomodoroBtn = document.getElementById("pomodoro-session")
 let shortBreakBtn = document.getElementById("short-break")
 let longBreakBtn= document.getElementById("long-break")
@@ -50,10 +54,7 @@ let stopBtn = document.getElementById("stop")
 const allSparklingImage = document.querySelectorAll(".sparkling-image")
 const catImage = document.getElementById("cat-image")
 
-console.log(allSparklingImage)
-
 let currentTimer = null;
-let alarm
 
 function showDefaultTimer() {
   pomodoroTimer.style.display = "block";
@@ -125,8 +126,9 @@ function startTimer(timerDisplay) {
     if(timeRemaining <= 0) {
       clearInterval(myInterval);
       timerDisplay.textContent = "00:00"
-      alarm = new Audio("../assets/audio/mixkit-tick-tock-clock-timer-1045.wav");
-      alarm.play();
+      alarm.play().catch(error => {
+        console.error("Audio playback failed:", error)
+      })
     } else {
       const minutes = Math.floor(timeRemaining / 60000);
       const seconds = ((timeRemaining % 60000) / 1000).toFixed(0);
@@ -177,5 +179,3 @@ stopBtn.addEventListener("click", () => {
     clearInterval(myInterval);
   }
 })
-
-

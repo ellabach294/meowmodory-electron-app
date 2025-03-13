@@ -7,5 +7,17 @@ export default defineConfig({
   preload: {
     plugins: [externalizeDepsPlugin()]
   },
-  renderer: {}
+  renderer: {
+    build: {
+      assetsInclude: ['assets/**/*.*'],
+      rollupOptions: {
+        input: {
+          main: './src/renderer/index.html'
+        },
+        output: {
+          assetFileNames: 'assets/[name].[ext]'
+        }
+      }
+    }
+  },
 })
